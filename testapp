@@ -1,0 +1,6 @@
+#!/bin/bash
+
+while(true); do
+  echo `date` >> /var/tmp/testapp.log
+  sleep 1
+done
