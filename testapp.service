@@ -5,9 +5,14 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
+ExecStop=-/usr/bin/sleep 2
 ExecStart=/opt/resilientservice/testapp
+ExecStartPost=/opt/resilientservice/testappwatch
 Restart=always
+WatchdogSec=2
+NotifyAccess=all
 RestartSec=1
+TimeoutSec=5
 
 [Install]
 WantedBy=multi-user.target
